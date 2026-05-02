@@ -12,10 +12,28 @@ import SwiftUI
 struct Home: View {
     var body: some View {
          
-        ForEach(0..<10) { data in
-            Text("Erick : number: \(data)")
-        }
+        NavigationView {
+            //
+            List {
+                ForEach(0..<10) { data in
+                    Text("Erick : number: \(data + 1)")
+                        .padding()
+                
+                }
+            }
+            .navigationTitle("Notes")
+            .navigationBarItems(trailing: Button(action: {
+                print("We dont really care")
+            }, label: {
+                Text("+")
+            }))
+    
+
+          
+        }.padding(5)
+         
     }
+    // button
 }
 #Preview {
     Home()
